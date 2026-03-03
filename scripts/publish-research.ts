@@ -13,9 +13,9 @@ publishContent("research", issueNumber, {
     const m = metadata as unknown as IssueMetadata;
     const lines: string[] = [];
     if (m.sensemakingFor) {
-      lines.push(`sensemakingFor: ${m.sensemakingFor}`);
+      lines.push(`sensemakingFor: "${m.sensemakingFor}"`);
     }
-    if (m.researchType) lines.push(`researchType: ${m.researchType}`);
+    if (m.researchType) lines.push(`researchType: "${m.researchType}"`);
 
     return lines.join("\n");
   },

@@ -67,9 +67,9 @@ export function parseMetadata(markdown: string): IssueMetadata {
   const featured = extractField(content, "Featured").toLowerCase();
   if (featured === "true") metadata.featured = true;
 
-  const sensemakingFor = extractField(content, "Sensemaking For").toLowerCase();
-
-  if (sensemakingFor) metadata.sensemakingFor = sensemakingFor;
+  const VALID_SENSEMAKING = ["mechanisms", "apps", "campaigns", "case-studies", "research"];
+  const sensemakingFor = extractField(content, "Sensemaking For").toLowerCase().trim();
+  if (VALID_SENSEMAKING.includes(sensemakingFor)) metadata.sensemakingFor = sensemakingFor;
 
   const researchType = extractField(content, "Research Type").toLowerCase();
 

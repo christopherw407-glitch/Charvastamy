@@ -138,7 +138,10 @@ export async function publishContent(
   const yamlList = (items: string[]) =>
     items.length > 0 ? items.map((i) => `  - ${i}`).join("\n") : "";
 
-  const tagsYaml = yamlList(metadata.tags || []);
+  const yamlTagList = (items: string[]) =>
+    items.length > 0 ? items.map((i) => `  - "${i.replace(/"/g, '\\"')}"`).join("\n") : "";
+
+  const tagsYaml = yamlTagList(metadata.tags || []);
 
   let frontmatter = `---
 id: '${existingId || Date.now()}'
