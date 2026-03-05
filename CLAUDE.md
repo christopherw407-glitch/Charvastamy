@@ -186,7 +186,8 @@ npm run publish-campaign <issue-number>
 
 1. Create the file at `src/content/{category}/{slug}.md`
 2. Do **not** add `banner:` to the frontmatter — omit it entirely
-3. After creating all content files, run:
+3. **Download inline images from the source article.** If the original article contains embedded images (diagrams, charts, figures, screenshots), download each one and save it to `public/content-images/{category}/{slug}/` with a descriptive filename (e.g. `diagram-1.png`, `funding-flow.png`). Reference them in the markdown body as `![Alt text](/content-images/{category}/{slug}/filename.png)`. Do **not** leave external URLs as image sources — always download and host locally.
+4. After creating all content files, run:
    ```bash
    npm run banner:auto
    ```

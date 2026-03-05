@@ -13,6 +13,7 @@
 
 # Production
 /build
+/gitcoin_co_30/
 
 # Misc
 .DS_Store
