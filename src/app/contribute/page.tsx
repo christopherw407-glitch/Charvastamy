@@ -254,7 +254,18 @@ export default function ContributePage() {
               <h2 className="text-2xl font-bold text-gray-25">How It Works</h2>
             </div>
 
-            <div className="grid md:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-5 gap-6">
+              <div className="text-center">
+                <div className="w-12 h-12 rounded-full bg-teal-700 text-gray-25 font-bold flex items-center justify-center mx-auto mb-4">
+                  0
+                </div>
+                <h3 className="font-semibold text-gray-25 mb-2">Plan</h3>
+                <p className="text-sm text-gray-400 font-serif">
+                  <a href="https://t.me/+TIzf8MYT7DY0YWVh" target="_blank" rel="noopener noreferrer" className="text-teal-500 hover:text-teal-400 underline">Join the Telegram</a> and
+                  ask what research we&apos;re interested in. Validate mutual
+                  interest before spending time writing!
+                </p>
+              </div>
               <div className="text-center">
                 <div className="w-12 h-12 rounded-full bg-teal-700 text-gray-25 font-bold flex items-center justify-center mx-auto mb-4">
                   1
