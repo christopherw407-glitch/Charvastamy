@@ -3,7 +3,6 @@ id: '1772727463068'
 slug: markee
 name: "Markee"
 shortDescription: "A marketplace for digital real estate, serving up a network of embedded cross-platform messages that anyone can pay to edit."
-banner: /content-images/apps/markee/banner.jpg
 logo: /content-images/apps/markee/logo.png
 tags:
   - "community funding"
@@ -34,6 +33,7 @@ relatedResearch:
 
 relatedCampaigns:
 
+banner: /content-images/apps/markee/banner.png
 ---
 
 - **Category**: Platform | Primitive  
