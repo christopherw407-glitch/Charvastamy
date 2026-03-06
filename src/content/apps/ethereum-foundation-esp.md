@@ -6,9 +6,9 @@ shortDescription: "The Ethereum Foundation's direct grants program for open-sour
 logo: /content-images/apps/ethereum-foundation-esp/logo.png
 featured: true
 tags:
-  - expert
-  - milestone
   - grants
+  - milestone
+  - expert
 lastUpdated: '2026-02-13'
 relatedMechanisms:
 
@@ -20,6 +20,7 @@ relatedResearch:
 
 relatedCampaigns:
 
+banner: /content-images/apps/ethereum-foundation-esp/banner.png
 ---
 
 The **Ethereum Foundation Ecosystem Support Program (ESP)** is the primary direct grants program of the Ethereum Foundation, funding open-source public goods that strengthen Ethereum's technical, social, and research foundations. ESP provides non-dilutive financial support and ecosystem guidance to builders, researchers, and community organizers working on critical infrastructure, cryptography, developer tooling, education, and long-horizon research that is unlikely to be sustained by commercial incentives alone.

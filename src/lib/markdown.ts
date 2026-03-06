@@ -56,6 +56,9 @@ function parseBaseContent(data: any, content: string, slug: string): App | Mecha
     featured: data.featured || false,
     relatedApps: data.relatedApps || [],
     relatedMechanisms: data.relatedMechanisms || [],
+    relatedCaseStudies: data.relatedCaseStudies || [],
+    relatedResearch: data.relatedResearch || [],
+    relatedCampaigns: data.relatedCampaigns || [],
   }
 }
 
@@ -115,7 +118,8 @@ function parseResearch(data: any, content: string, slug: string): Research {
   return {
     ...parseBaseContent(data, content, slug),
     sensemakingFor: data.sensemakingFor,
-  } as Research
+    researchType: data.researchType
+  } as Research;
 }
 
 export function getResearchFromMarkdown(): Research[] {

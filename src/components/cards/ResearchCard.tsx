@@ -33,13 +33,13 @@ export default function ResearchCard({
               size="sm"
               className="absolute top-7 left-10 w-fit"
             >
-              Report
+              {research.researchType ?? 'Report'}
             </Badge>
 
-            <h3 className="max-w-[60%] mt-4 text-xl font-bold text-gray-25 md:text-2xl font-heading">
+            <h3 className="sm:max-w-[60%] mt-4 text-xl font-bold text-gray-25 md:text-2xl font-heading">
               {research.name}
             </h3>
-            <p className="max-w-[60%] mt-2 text-sm text-gray-400 font-serif">
+            <p className="sm:max-w-[60%] mt-2 text-sm text-gray-400 font-serif">
               {research.shortDescription}
             </p>
             <div className="mt-4 flex justify-end">
@@ -74,7 +74,7 @@ export default function ResearchCard({
             size="sm"
             className="absolute top-3 left-1/2 -translate-x-1/2"
           >
-            Report
+            {research.researchType ?? 'Report'}
           </Badge>
 
           <h3 className="-translate-y-1/2 text-md sm:text-xl md:text-2xl text-center font-bold h-18 flex items-center overflow-visible">

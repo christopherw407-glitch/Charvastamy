@@ -2,13 +2,13 @@
 id: '1771872833667'
 slug: arbitrum-dao-grants
 name: "Arbitrum DAO Grants"
-shortDescription: "Arbitrum's DAO-governed grants ecosystem funding builders and infrastructure across the network."
-logo: /content-images/apps/arbitrum-dao-grants/logo.svg
+shortDescription: "ARB-funded grants ecosystem supporting builders, protocols, and infrastructure on Arbitrum."
+logo: /content-images/apps/arbitrum-dao-grants/logo.png
 tags:
   - grants
   - governance
   - milestone
-lastUpdated: '2026-02-23'
+lastUpdated: '2026-02-24'
 relatedMechanisms:
 
 relatedApps:
@@ -19,6 +19,7 @@ relatedResearch:
 
 relatedCampaigns:
 
+banner: /content-images/apps/arbitrum-dao-grants/banner.png
 ---
 
 **Arbitrum DAO Grants** is a multi-program funding ecosystem that distributes ARB tokens from the Arbitrum DAO treasury to support builders, researchers, infrastructure teams, protocols, and community initiatives across the Arbitrum network.

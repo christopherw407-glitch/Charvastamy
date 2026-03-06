@@ -11,12 +11,9 @@ import {
 } from "@/components/layouts";
 import { research } from "@/content/research";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { pageSeo } from "@/lib/page-seo";
 
-export const metadata: Metadata = {
-  title: "Research & Trends",
-  description:
-    "Analysis of capital flows, mechanism performance, and ecosystem shifts in Ethereum funding.",
-};
+export const metadata: Metadata = pageSeo.research;
 
 export default function ResearchPage() {
   return (
@@ -41,7 +38,7 @@ export default function ResearchPage() {
 
       <CTASection
         title="Contribute Research"
-        description="Have insights to share? Submit analysis, reports, or trend pieces. Quality research earns bounties and recognition."
+        description="Have insights to share? Submit original analysis, reports, or trend pieces. We maintain a high bar — only well-researched submissions are accepted."
         buttonText="Submit Research"
         buttonHref="/submit?type=research"
       />

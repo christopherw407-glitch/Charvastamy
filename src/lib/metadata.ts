@@ -13,38 +13,11 @@ interface MetadataConfig {
 }
 
 export function generateDetailPageMetadata(config: MetadataConfig): Metadata {
-  const {
-    title,
-    shortDescription,
-    slug,
-    type,
-    banner,
-    logo,
-    publishDate,
-    lastUpdated,
-    authors,
-  } = config;
+  const { title, shortDescription, slug, type, publishDate, lastUpdated, authors } = config;
 
-  const url = `https://explore.gitcoin.co/${type}/${slug}`;
+  const url = `https://gitcoin.co/${type}/${slug}`;
 
-  // Determine the best image to use
-  let imageUrl = "https://explore.gitcoin.co/content-images/placeholder.png";
-
-  if (banner && !banner.endsWith(".svg")) {
-    imageUrl = `https://explore.gitcoin.co${banner}`;
-  } else if (logo && !logo.endsWith(".svg")) {
-    imageUrl = `https://explore.gitcoin.co${logo}`;
-  }
-
-  // Determine image type based on extension
-  const getImageType = (url: string): string => {
-    if (url.endsWith(".jpg") || url.endsWith(".jpeg")) return "image/jpeg";
-    if (url.endsWith(".png")) return "image/png";
-    if (url.endsWith(".webp")) return "image/webp";
-    return "image/png"; // default
-  };
-
-  // Base metadata
+  // Base metadata — images are handled by opengraph-image.tsx in each route segment
   const metadata: Metadata = {
     title,
     description: shortDescription,
@@ -55,32 +28,21 @@ export function generateDetailPageMetadata(config: MetadataConfig): Metadata {
       title,
       description: shortDescription,
       url,
-      siteName: "Gitcoin Explorer",
-      images: [
-        {
-          url: imageUrl,
-          width: 1200,
-          height: 630,
-          alt: title,
-          type: getImageType(imageUrl),
-        },
-      ],
+      siteName: "Gitcoin",
       locale: "en_US",
-      type:
-        type === "research" || type === "case-studies" ? "article" : "website",
+      type: "article",
     },
     twitter: {
       card: "summary_large_image",
       title,
       description: shortDescription,
-      images: [imageUrl],
       creator: "@gitcoin",
       site: "@gitcoin",
     },
   };
 
   // Add article-specific metadata
-  if (metadata.openGraph && (type === "research" || type === "case-studies")) {
+  if (metadata.openGraph) {
     const ogArticle: Record<string, any> = metadata.openGraph as any;
     if (publishDate) {
       ogArticle.publishedTime = publishDate;

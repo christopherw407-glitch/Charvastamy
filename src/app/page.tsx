@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+import { pageSeo, siteDescription } from "@/lib/page-seo";
 import Link from "next/link";
 import {
   AppCard,
@@ -13,6 +15,9 @@ import { getFeaturedCampaigns } from "@/content/campaigns";
 import { getFeaturedResearch } from "@/content/research";
 import SectionHeader from "@/components/ui/SectionHeader";
 import ContributeCard from "@/components/cards/ContributeCard";
+import { organizationJsonLd } from "@/lib/json-ld";
+
+export const metadata: Metadata = pageSeo.home;
 
 const curateCards = [
   {
@@ -57,6 +62,22 @@ const curateCards = [
   },
 ];
 
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Gitcoin",
+  url: "https://gitcoin.co",
+  description: siteDescription,
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: "https://gitcoin.co/search?q={search_term_string}",
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
 export default function HomePage() {
   const featuredApps = getFeaturedApps(3);
   const featuredCampaigns = getFeaturedCampaigns(2);
@@ -64,6 +85,14 @@ export default function HomePage() {
 
   return (
     <div className="bg-gray-900 text-gray-25" data-node-id="551:2185">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+      />
       <section className="relative overflow-hidden -mt-[72px] pt-[72px]">
         <ChladniBackground variant="1" opacity={0.8} />
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-900 to-transparent z-[1]" />
@@ -132,7 +161,7 @@ export default function HomePage() {
         >
           <div className="mx-auto w-full max-w-[1216px] px-4 sm:px-6 lg:px-0">
             <div className="mx-auto max-w-[980px] text-center">
-              <h2 className="text-balance text-[48px] font-extrabold text-gray-25 font-heading sm:text-[64px] lg:text-[72px]">
+              <h2 className="text-balance text-[32px] font-extrabold text-gray-25 font-heading sm:text-[48px] lg:text-[64px]">
                 What We Curate
               </h2>
               <p className="mx-auto mt-3 max-w-[700px] text-sm text-gray-400 font-serif">
@@ -218,8 +247,8 @@ export default function HomePage() {
                 },
                 {
                   icon: Zap,
-                  title: "Earn Bounties",
-                  copy: "Get rewarded for high-quality contributions that meet our standards",
+                  title: "Quality First",
+                  copy: "Only well-researched, original submissions that meet our high standards are accepted",
                 },
               ].map((item) => (
                 <article key={item.title} className="text-center">
