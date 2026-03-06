@@ -41,11 +41,6 @@ const nextConfig: NextConfig = {
         destination: "https://octaviaan.github.io/Chladni-Particles/",
       },
       // gitcoin.co rewrites
-      //  redo - high priority
-      {
-        source: "/about",
-        destination: "https://app.gitcoin.co/about",
-      },
       // medium - on webflow
       {
         source: "/blog",
