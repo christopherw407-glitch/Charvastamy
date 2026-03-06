@@ -53,14 +53,22 @@ async function getPRMeta(pr: string, headers: Record<string, string>) {
   if (!prRes.ok) throw new Error(`GitHub API error: ${prRes.status}`);
   const prData = await prRes.json();
 
-  const filesRes = await fetch(
-    `https://api.github.com/repos/${REPO}/pulls/${pr}/files`,
-    { headers, next: { revalidate: 0 } },
-  );
-  if (!filesRes.ok) throw new Error(`GitHub API error: ${filesRes.status}`);
-  const files = await filesRes.json();
+  // Paginate through all PR files (default page size is 30)
+  const allFiles: { filename: string }[] = [];
+  let page = 1;
+  while (true) {
+    const filesRes = await fetch(
+      `https://api.github.com/repos/${REPO}/pulls/${pr}/files?per_page=100&page=${page}`,
+      { headers, next: { revalidate: 0 } },
+    );
+    if (!filesRes.ok) throw new Error(`GitHub API error: ${filesRes.status}`);
+    const batch = await filesRes.json() as { filename: string }[];
+    allFiles.push(...batch);
+    if (batch.length < 100) break;
+    page++;
+  }
 
-  const contentFiles = (files as { filename: string }[])
+  const contentFiles = allFiles
     .map((f) => f.filename)
     .filter((f) =>
       /^src\/content\/(apps|mechanisms|research|case-studies|campaigns)\/.+\.md$/.test(f),
