@@ -104,12 +104,17 @@ export const pageSeo = {
   ),
   contribute: meta(
     "Contribution Guide",
-    "Learn how to contribute to the Gitcoin Funding Directory and earn bounties.",
+    "Learn how to contribute high-quality content to the Gitcoin Funding Directory.",
     "/contribute",
   ),
   submit: meta(
     "Submit Content",
-    "Submit apps, mechanisms, case studies, research, or campaigns to the Gitcoin Funding Directory. Quality contributions earn bounties.",
+    "Submit apps, mechanisms, case studies, research, or campaigns to the Gitcoin Funding Directory. Only high-quality submissions are accepted.",
     "/submit",
+  ),
+  about: meta(
+    "About",
+    "Gitcoin has been building tools since 2017 that enable communities to build, fund and protect what matters to them.",
+    "/about"
   ),
 };
