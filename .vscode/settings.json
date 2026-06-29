@@ -1,0 +1,6 @@
+{
+    "npm.packageManager": "yarn",
+    "npm.scriptExplorerAction": "run",
+    "npm.scriptRunner": "yarn",
+    "npm.enableRunFromFolder": true
+}
