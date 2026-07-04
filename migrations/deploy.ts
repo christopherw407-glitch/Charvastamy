@@ -10,4 +10,4 @@ export default async function (provider: anchor.AnchorProvider) {
   anchor.setProvider(provider);
 
   // Add your deploy script here.
-};
+}

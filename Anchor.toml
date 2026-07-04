@@ -8,8 +8,14 @@ skip-lint = false
 [programs.localnet]
 charvastamy = "FCFnNNwPf2Ej1Eub1k4mctfdXvcoWZNRZ81FgyBh6Yjc"
 
+[programs.devnet]
+charvastamy = "FCFnNNwPf2Ej1Eub1k4mctfdXvcoWZNRZ81FgyBh6Yjc"
+
+[programs.mainnet]
+charvastamy = "DYYn5KcrpeKfMeoumx9Nz5QLZUtVsFoRUCQsaSAVuF1o"
+
 [provider]
-cluster = "mainnet"
+cluster = "devnet"
 wallet = "~/.config/solana/id.json"
 
 [scripts]
